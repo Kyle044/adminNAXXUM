@@ -66,12 +66,23 @@ class AdminController extends Controller
         $users = DB::table('users')->get();
         return response()->json(['data' => $users]);
     }
-    public function searchAdmin(Request $request)
+
+    public function updateAdmin(Request $request)
     {
+        if ($request->id && $request->username && $request->password && $request->fullname && $request->contact && $request->email) {
+            DB::table('users')
+                ->where('id', $request->id)
+                ->update([
+                    'username' => $request->username,
+                    'password' => Hash::make($request->password),
+                    'full_name' =>  $request->fullname,
+                    'contact_number' => $request->contact,
+                    'email' => $request->email
+                ]);
+        } else {
+            return response()->json(['data' => 'Kindly Fill up all the missing fields']);
+        }
     }
-
-
-
 
     public function deleteAdmin(Request $request)
     {
