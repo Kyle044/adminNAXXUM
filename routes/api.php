@@ -20,3 +20,4 @@ Route::get('/searchAdmin', [AdminController::class, 'searchAdmin']);
 Route::post('/login', [AdminController::class, 'login']);
 Route::post('/signup', [AdminController::class, 'signup']);
 Route::post('/deleteAdmin', [AdminController::class, 'deleteAdmin']);
+Route::post('/updateAdmin', [AdminController::class, 'updateAdmin']);

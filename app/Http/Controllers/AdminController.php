@@ -69,16 +69,18 @@ class AdminController extends Controller
 
     public function updateAdmin(Request $request)
     {
-        if ($request->id && $request->username && $request->password && $request->fullname && $request->contact && $request->email) {
+        error_log($request->email);
+        if ($request->id && $request->username && $request->password && $request->full_name && $request->contact_number && $request->email) {
             DB::table('users')
                 ->where('id', $request->id)
                 ->update([
                     'username' => $request->username,
                     'password' => Hash::make($request->password),
-                    'full_name' =>  $request->fullname,
-                    'contact_number' => $request->contact,
+                    'full_name' =>  $request->full_name,
+                    'contact_number' => $request->contact_number,
                     'email' => $request->email
                 ]);
+            return response()->json(['data' => 'Sucessfully Updated']);
         } else {
             return response()->json(['data' => 'Kindly Fill up all the missing fields']);
         }
