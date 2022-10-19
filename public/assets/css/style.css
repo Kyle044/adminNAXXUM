@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(93, 46, 189, 1) 35%,
+        rgba(101, 63, 194, 1) 71%,
+        rgba(118, 104, 207, 1) 100%,
+        rgba(55, 0, 255, 1) 100%
+    );
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar {
+    background-color: rgb(50, 50, 65);
+    color: white;
+}
+
+.login form {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 4px;
+}
+.tbns {
+    border: 1px solid darkblue;
+    background-color: rgb(50, 50, 65);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 3px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.tbn {
+    border: 1px solid darkblue;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(93, 46, 189, 1) 35%,
+        rgba(101, 63, 194, 1) 71%,
+        rgba(118, 104, 207, 1) 100%,
+        rgba(55, 0, 255, 1) 100%
+    );
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 3px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+.tbn:hover {
+    background: rgb(134, 134, 182);
+
+    font-weight: bold;
+}
+
+.admincontainer {
+    height: 100vh;
+}
+
+.title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.sidebarcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.sidebarcontainer i {
+    font-size: 10rem;
+    margin: 10px;
+    text-align: center;
+}
+
+.sidebarcontainer ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+.sidebarcontainer ul li {
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+.sidebarcontainer ul li:hover {
+    cursor: pointer;
+    color: rgb(50, 50, 65);
+    background-color: white;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+.sidebarcontainer ul li i {
+    font-size: 2rem;
+}
+@media (max-width: 766px) {
+    .sidebar {
+        background-color: rgb(50, 50, 65);
+        color: white;
+        min-width: 727px;
+    }
+    .sidebarcontainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    .sidebarcontainer ul {
+        list-style: none;
+        width: 50%;
+        padding: 0;
+        display: flex;
+    }
+    .card {
+        min-width: 689px;
+    }
+}

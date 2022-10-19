@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,15 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AdminController::class, 'loginWeb']);
+
+
+Route::get('/admin', [AdminController::class, 'getAdminWeb']);
+Route::get('/logout', [AdminController::class, 'logout']);
+
+Route::post('/AuthenticateWeb', [AdminController::class, 'authenticate']);
+
+Route::post('/createAdmin', [AdminController::class, 'createAdmin']);
+
+Route::post('/deleteAdminWeb', [AdminController::class, 'deleteAdminWeb']);
+Route::post('/updateAdminWeb', [AdminController::class, 'updateAdminWeb']);
